@@ -1,0 +1,11 @@
+body {
+    background-image: url("../img/tsh.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight:lighter;
+    color: white;
+  }
+  
+.container{
+    margin-top: 20px;
+}

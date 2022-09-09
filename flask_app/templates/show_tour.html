@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver revista</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{url_for ('static',filename='css/style_show.css')}}">
+</head>
+<body>
+    <div class="container">
+        <header class="d-flex justify-content-between align-items-center">
+            <a href="/dashboard" class="btn btn-outline-dark">Página principal</a>
+            <a href="/logout" class="btn btn-outline-dark">Cerrar Sesión</a>            
+
+        </header>
+        <main><br>
+            <div class="c"> 
+                <div class="card-title"> 
+                </div>
+                <div class="card-title">
+                    
+
+                    <h1 class="spp">{{tour.place_name}}</h1>
+                </div>
+                <div class="card-body">
+                    <div class="let">
+                        <p>Nombre común: {{tour.place_name}}</p>
+
+                        <p>Descripción: {{tour.place_name}}</p>
+                        <p>Habitos: {{tour.place_name}}</p>
+                        <p>Distribución en colombia: {{tour.place_name}}</p> <br>
+                        <h4>Añadido por: {{tour.first_name}} {{tour.last_name}}</h4>
+                    </div>
+                    {% with messages = get_flashed_messages(category_filter=['places']) %}
+                    {% if messages %}
+                        <div class="alert alert-danger">
+                            {% for message in messages %}
+                                <p>{{message}}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+                    {% for key, value in data.items () %}
+                    {%if key.id == tour.id %}
+                        <form action="/places" method="post">
+                            <input type="hidden" name="user_id" value="{{ user.id }}">
+                            <input type="hidden" name="place_id" value="{{ key.id }}">
+                            <label for="like">{{value}}</label>                                    
+                            <input type="submit" id="like" value="likes" class="btn btn-warning">
+                        </form>
+                    {%endif%}
+                {%endfor%}
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

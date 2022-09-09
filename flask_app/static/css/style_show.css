@@ -1,0 +1,40 @@
+.spp{
+    font-style: italic;
+    font-size: 50pt;
+}
+
+.shark{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    margin-left: 250px;
+    border-radius: 6px;
+    border: 1px solid black;
+
+}
+
+.c{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.let{
+    font-size: 20pt;
+    color: rgb(0, 0, 0);
+    font-weight: lighter;
+}
+
+.container{
+    margin: 20px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 50px;
+
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{url_for ('static',filename='css/style1.css')}}">
+
+</head>
+<body>
+    <div class="container">
+        <header class="d-flex justify-content-between align-items-center">
+                <nav> <!-- Menú de navegación--> 
+                <h4>Hola {{user.first_name}}  </h4>
+                <!-- Permite que cuando nosotros hagamos click en agregar -->
+                <!-- receta este nos redirija new/recipe la cual tenga el formulario-->
+                <!-- para agregar la receta-->
+                {% if user.id == 2 %}
+                    <a href="/new/place"class="btn btn-outline-secondary" disabled>Add a Place</a>
+                    <a href="/edit/user/{{user.id }}" class="btn btn-outline-secondary" disabled>My Account</a>
+                    <a href="/juegos" class="btn btn-outline-secondary" disabled>Play</a>
+                    <a href="/logout" class="btn btn-outline-secondary" disabled>Log Out</a>
+                {% elif user.id != 2 %}
+                    <a href="/edit/user/{{user.id }}" class="btn btn-outline-secondary" disabled>My Account</a>
+                    <a href="/juegos" class="btn btn-outline-secondary" disabled>Play</a>
+                    <a href="/logout" class="btn btn-outline-secondary" disabled>Log Out</a>
+                {% endif %}
+
+            </nav>
+        </header><br>
+    </div>
+    
+
+    <div class="row">
+        <div class="col-4">
+                
+                <h1 class="list">Where do you want to go?</h1> 
+            
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+                <ul id="myUL">
+                    <li><a href="#">Restaurants</a></li>
+                    <li><a href="#">Night Clubs</a></li>
+                    <li><a href="#">Coffee Shop</a></li>
+                    <li><a href="#">Museums / Theaters</a></li>
+                    <li><a href="#">Nature</a></li>
+                    <li><a href="#">Others</a></li>
+                </ul>
+
+            {% for place in tour %}
+
+                <a href="/show/place/{{place.id}}" class="btn btn-link" id="species" > 
+                    {{place.category}}</a> <br>
+            {%endfor%}
+            
+            
+        </div>
+        <div class="col-8" id="tib">
+                <h1> Hablemos de tiburones </h1><br>
+                <p> Los tiburones pertenecen a la clase chondrichthyes que los identifica
+                    como peces cartilaginosos...<br> 
+                    pero que quiere decir eso?<br>
+                    Pues bien esto quiere decir que su esqueleto interno está compuesto por cartílago 
+                    en lugar de hueso... ¡¿acaso no es esto INCREIBLEEEEE?! 
+                </p>
+                <div class="esq">
+                <img src="{{ url_for('static',filename='img/esqueleto.jpeg')}}" id="esqueleto" />
+                </div>
+                <p>
+                    En el mundo hay alrededor de 509 especies de tiburones... En el caribe colombiano habitan 57spp por su parte el pacífico alberga 36spp... Pero algo muy curioso es que en el pacífico hay menos especies en comparación con el caribe sin embargo de cada especie abundan individuos, esto se debe al efecto de las actividades humanas que se llevan en nuestro caribe
+                </p>
+                <p>
+                    Los tiburones pueden vivir en zonas costeras o zonas oceánicas, la zona costera se encuentra entre el borde de la tierra y el borde de la plataforma continental mientras que la zona oceánica es aquella que se encuentra después de la plataforma continental.
+                    Los tiburones continentales se dividen en dos grandes grupos aquellos que tienen comportamientos pelágicos y aquellos con comportamientos bentónicos...<br>
+                </p>
+                <div class="esq">
+                    <img src="{{ url_for('static',filename='img/emarinos.jpeg')}}" id="emarinos"/><br>
+                </div>
+                    <p>
+                    Pero qué es esto de pelágico y bentónico??? <br>
+                    Se denominan especies con comportamientos o hábitos pelágicos aquellas que viven en aguas medias o cerca de la superficie (pero recuerda cerca de la superficie puede ser 100mt de profundidad e incluso mucho más)
+                    por su parte habitos bentónicos abarba aquellas especies que habitan el fondo marino
+                </p>
+
+            </div>
+        </div>
+    
+    
+    <script src="{{url_for('static', filename='./js/js.js')}}"></script>
+</body>
+</html>
