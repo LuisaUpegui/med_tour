@@ -13,9 +13,9 @@
     
     <div class="container">
         <nav> <!-- Menú de navegación--> 
-            <h1>Hola {{user.first_name}}  </h1>
-            <a href="/dashboard" class="btn btn-outline-dark">Pagina principal</a>
-            <a href="/logout" class="btn btn-outline-dark">Cerrar Sesión</a>
+            <h1>Hey there!  </h1>
+            <a href="/dashboard" class="btn btn-outline-dark">back</a>
+            <a href="/logout" class="btn btn-outline-dark">log out</a>
 
         </nav>
         <div class="row"> 
@@ -32,7 +32,7 @@
             <form action="/update/user" method="post">
                 <input type="hidden" name="id" value="{{user.id}}" >
 
-                <h1>Actualizar cuenta</h1>
+                <h1>Update account</h1>
                 <div class="form-group">
                     <label for="first_name">Nombre:</label>
                     <input type="text" id="first_name" name="first_name" class="form-control" value="{{user.first_name}}">
@@ -309,12 +309,12 @@
                     <input type="submit" value="actualizar" class="btn btn-light">
             </form>
                 </div>
-            <!-- <div class="col-6" id="sp"> <br>
+            <div class="col-6" id="sp"> <br>
                 <h1 >Places added</h1>
-                {% for m in place %}
-                    <p class="list"> {{m.place_name}}  <a href="/delete/tour/{{m.id}}" class="btn btn-light">Borrar</a> </p>
+                {% for place in tour %}
+                    <p class="list"> {{place.place_name}}  <a href="/delete/tour/{{place.id}}" class="btn btn-light">Borrar</a> </p>
                 {% endfor %}
-            </div> -->
+            </div>
         </div>
     </div>
 

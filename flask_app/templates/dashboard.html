@@ -13,10 +13,7 @@
     <div class="container">
         <header class="d-flex justify-content-between align-items-center">
                 <nav> <!-- Menú de navegación--> 
-                <h4>Hola {{user.first_name}}  </h4>
-                <!-- Permite que cuando nosotros hagamos click en agregar -->
-                <!-- receta este nos redirija new/recipe la cual tenga el formulario-->
-                <!-- para agregar la receta-->
+
                 {% if user.id == 2 %}
                     <a href="/new/place"class="btn btn-outline-secondary" disabled>Add a Place</a>
                     <a href="/edit/user/{{user.id }}" class="btn btn-outline-secondary" disabled>My Account</a>
