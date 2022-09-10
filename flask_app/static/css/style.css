@@ -1,6 +1,6 @@
 
   body { 
-    background: rgba(0, 0, 0, 0.5) url("../img/mdd.jpeg");
+    background: rgba(0, 0, 0, 0.8) url("../img/mdd.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode:  darken;
@@ -10,19 +10,24 @@
 .qch{
   display: grid;
   justify-items: center;
+  color: #ffffff;
+  font-weight: 700;
   font-size: xx-large;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-h1{
+.j{
     display: grid;
     justify-items: center;
-    font-weight: 400;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+    -webkit-text-stroke: 0.6px rgb(196, 72, 72);
+    color: transparent;
+    font-weight: 900px;
+    font-size: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
 
 
-.colu{
+/* .colu{
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -31,19 +36,34 @@ h1{
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
     border-radius: 10px ;
+} */
+
+.colu{
+    background: rgba( 255, 255, 255, 0.05 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.07 );
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: 400px;
+    margin-top: 100px;
+    margin-left: 350px;
 }
 
 .colu2{
+  background: rgba( 255, 255, 255, 0.05 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.07 );
+  backdrop-filter: blur( 1px );
+  -webkit-backdrop-filter: blur( 10px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
   width: 500px;
-  height: 575px;
-  display: flex;
-  flex-direction: column;
+  height: 515px;
   margin-top: 3px;
   margin-left: 320px;
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
-  border-radius: 10px ;
 }
+
+
 
 .contenido{
   font-size: 150;

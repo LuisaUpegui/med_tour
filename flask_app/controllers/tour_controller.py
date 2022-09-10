@@ -80,6 +80,14 @@ def show_tour(id):
 
 
 
+@app.route('/nightclubs')
+def night_clubs():
+    return render_template('clubs.html')
+
+
+
+
+
 @app.route('/delete/tour/<int:id>')
 def delete_tour(id):
     if 'usuario_id' not in session: 

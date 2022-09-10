@@ -39,7 +39,7 @@
 
                 <ul id="myUL">
                     <li><a href="#">Restaurants</a></li>
-                    <li><a href="#">Night Clubs</a></li>
+                    <li><a href="/nightclubs">Night Clubs</a></li>
                     <li><a href="#">Coffee Shop</a></li>
                     <li><a href="#">Museums / Theaters</a></li>
                     <li><a href="#">Nature</a></li>
@@ -47,7 +47,6 @@
                 </ul>
 
             {% for place in tour %}
-
                 <a href="/show/place/{{place.id}}" class="btn btn-link" id="species" > 
                     {{place.category}}</a> <br>
             {%endfor%}
