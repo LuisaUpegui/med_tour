@@ -19,24 +19,13 @@
 .j{
     display: grid;
     justify-items: center;
-    -webkit-text-stroke: 0.6px rgb(196, 72, 72);
+    -webkit-text-stroke: 0.3px rgb(229, 216, 32);
     color: transparent;
     font-weight: 900px;
     font-size: 80px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
 
-
-/* .colu{
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px;
-    margin-left: 350px;
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    border-radius: 10px ;
-} */
 
 .colu{
     background: rgba( 255, 255, 255, 0.05 );
@@ -45,9 +34,10 @@
     -webkit-backdrop-filter: blur( 10px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    width: 400px;
-    margin-top: 100px;
-    margin-left: 350px;
+    width: 500px;
+    height: 260px;
+    margin-top: 3px;
+    margin-left: 320px;
 }
 
 .colu2{
