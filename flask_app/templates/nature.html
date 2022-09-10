@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Anton" />
     <link rel="stylesheet" type="text/css" href="{{url_for ('static',filename='css/night.css')}}">
 </head>
-<body class="body">
+<body class="body5">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/dashboard" id="headr">Que Chimba Medallo</a>
@@ -33,10 +33,10 @@
             <div id="body2" class="p-5 text-center bg-image">
                 <div class="d-flex justify-content-center align-items-center h-100">
                     <div class="text-white">
-                        <h1 class="mb-4" >Night Clubs</h1>
-                        {% for clubs in theclubs %}
-                            {% if clubs.category == "Night Clubs" %}
-                            <a class="btn btn-outline-light btn-lg mb-3" href="/show/place/{{clubs.id}}" role="button">{{clubs.place_name}}</a><br>
+                        <h1 class="mb-4" >Nature</h1>
+                        {% for nat in thenature %}
+                            {% if nat.category == "Nature" %}
+                            <a class="btn btn-outline-light btn-lg mb-3" href="/show/place/{{nat.id}}" role="button">{{nat.place_name}}</a><br>
                             {% endif %}
                         {% endfor %}
                         </div>

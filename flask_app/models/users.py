@@ -81,7 +81,7 @@ class User:
 
     @classmethod
     def update(cls, formulario): 
-        query = "UPDATE users SET first_name = %(first_name)s, last_name = %(last_name)s,  age=%(age)s,  nationality=%(nationality)s,  user_type=%( user_type)s, email=%(email)s WHERE id = %(id)s"
+        query = "UPDATE users SET first_name = %(first_name)s, last_name = %(last_name)s,  age=%(age)s,  nationality=%(nationality)s,  email=%(email)s WHERE id = %(id)s"
         result1 = connectToMySQL('tour').query_db(query, formulario)
         return result1
 
@@ -92,35 +92,25 @@ class User:
         user = cls(result[0])
         return user
 
-    @staticmethod
-    def valida_usuario2(formulario2):
+    # @staticmethod
+    # def valida_usuario2(formulario):
 
-        es_valido = True
+    #     es_valido = True
         
-        if len(formulario2['first_name']) < 3:
-            flash('Nombre debe de tener al menos 3 caracteres', 'revista')
-            es_valido = False
+    #     if len(formulario['first_name']) < 3:
+    #         flash('Nombre debe de tener al menos 3 caracteres', 'registro')
+    #         es_valido = False
         
-        if len(formulario2['last_name']) < 3:
-            flash('Apellido debe de tener al menos 3 caracteres', 'revista')
-            es_valido = False
-
-        if not EMAIL_REGEX.match(formulario2['email']): 
-            flash('Email invalido', 'revista')
-            es_valido = False
+    #     if len(formulario['last_name']) < 3:
+    #         flash('Apellido debe de tener al menos 3 caracteres', 'registro')
+    #         es_valido = False
             
-        if formulario2['age'] < 17:
-            flash('Debes tener mas de 18 años para registrarte', 'registro')
-            es_valido = False
+    #     if len(formulario['age']) < 1:
+    #         flash("Must write an age.", 'registro')
+    #         es_valido = False
 
-        if len(formulario2['nationality']) < 3:
-            flash('Tu nacionalidad debe de tener al menos 3 caracteres', 'registro')
-            es_valido = False
+    #     if len(formulario['nationality']) < 3:
+    #         flash('Tu nacionalidad debe de tener al menos 3 caracteres', 'registro')
+    #         es_valido = False
 
-        query = "SELECT * FROM users WHERE email = %(email)s"
-        results = connectToMySQL('tour').query_db(query, formulario2)
-        if len(results) >= 1:
-            flash('E-mail registrado previamente', 'revista')
-            es_valido = False
-
-        return es_valido
+    #     return es_valido

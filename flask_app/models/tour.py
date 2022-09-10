@@ -11,6 +11,7 @@ class Tour:
         self.category = data['category']
         self.price_range = data['price_range']
         self.schedule = data['schedule']
+        self.description = data['description']
         self.location = data['location']
         self.reference_place = data['reference_place']
         self.user_id=data['user_id']
@@ -44,7 +45,7 @@ class Tour:
     #Funcion para guardar 
     @classmethod
     def save(cls, data):
-        query = "INSERT INTO places (place_name,  category, price_range, schedule, location,reference_place,user_id) VALUES ( %(place_name)s, %(category)s, %(price_range)s,%(schedule)s,%(location)s,%(reference_place)s,%(user_id)s )"
+        query = "INSERT INTO places (place_name,  category, price_range, schedule, location, description,reference_place,user_id) VALUES ( %(place_name)s, %(category)s, %(price_range)s,%(schedule)s,%(location)s,%(description)s,%(reference_place)s,%(user_id)s )"
         nuevoId = connectToMySQL('tour').query_db(query, data)
         return nuevoId
 

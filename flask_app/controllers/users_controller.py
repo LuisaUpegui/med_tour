@@ -100,8 +100,8 @@ def update_user():
     if 'usuario_id' not in session: 
         return redirect('/')
     
-    if not User.valida_usuario2(request.form):
-        return redirect('/edit/user/'+request.form['id'] )
+    # if not User.valida_usuario2(request.form):
+    #     return redirect('/edit/user/'+request.form['id'] )
 
     User.update(request.form)
 

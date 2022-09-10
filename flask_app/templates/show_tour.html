@@ -9,33 +9,41 @@
     <link rel="stylesheet" type="text/css" href="{{url_for ('static',filename='css/style_show.css')}}">
 </head>
 <body>
-    <div class="container">
-        <header class="d-flex justify-content-between align-items-center">
-            <a href="/dashboard" class="btn btn-outline-dark">Página principal</a>
-            <a href="/logout" class="btn btn-outline-dark">Cerrar Sesión</a>            
 
-        </header>
-        <main><br>
-            <div class="c"> 
-                <div class="card-title"> 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/dashboard">Que Chimba Medallo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/dashboard">Back</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Log Out</a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+
+    <div id="body2">
+        <div class="container">
+            <div class="colu2" >
+
+                <h1>{{tour.place_name}}</h1>
+
+            <div >
+                <div class="let" >
+                    <p>Price range: {{tour.price_range}}</p>
+                    <p>Schedule: {{tour.schedule}}</p> 
+                    <p>Location: {{tour.location}}</p> 
+                    <p>Description: {{tour.description}}</p> 
+                    <p>Reference place: {{tour.reference_place}}</p> 
                 </div>
-                <div class="card-title">
-                    
 
-                    <h1 class="spp">{{tour.place_name}}</h1>
-                </div>
-                <div class="card-body">
-                    <div class="let">
-
-
-                        <p>Price range: {{tour.price_range}}</p>
-                        <p>Schedule: {{tour.schedule}}</p> 
-                        <p>Location: {{tour.location}}</p> 
-                        <p>reference place: {{tour.reference_place}}</p> 
-
-
-                    </div>
-                    {% with messages = get_flashed_messages(category_filter=['places']) %}
+                {% with messages = get_flashed_messages(category_filter=['places']) %}
                     {% if messages %}
                         <div class="alert alert-danger">
                             {% for message in messages %}
@@ -44,7 +52,8 @@
                         </div>
                     {% endif %}
                 {% endwith %}
-                    {% for key, value in data.items () %}
+
+                {% for key, value in data.items () %}
                     {%if key.id == tour.id %}
                         <form action="/places" method="post">
                             <input type="hidden" name="user_id" value="{{ user.id }}">
@@ -54,9 +63,9 @@
                         </form>
                     {%endif%}
                 {%endfor%}
-                </div>
             </div>
-        </main>
+            </div>
+        </div>
     </div>
 </body>
 </html>

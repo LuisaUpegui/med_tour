@@ -82,11 +82,93 @@ def show_tour(id):
 
 @app.route('/nightclubs')
 def night_clubs():
-    return render_template('clubs.html')
+    if 'usuario_id' not in session:
+        return redirect('/')
 
+    formulario = {
+        "id": session['usuario_id']
+    }
 
+    user = User.get_by_id(formulario) 
 
+    tour = Tour.get_all() 
+    
+    return render_template('clubs.html', theclubs = tour, user = user)
 
+@app.route('/restaurants')
+def rests():
+    if 'usuario_id' not in session:
+        return redirect('/')
+
+    formulario = {
+        "id": session['usuario_id']
+    }
+
+    user = User.get_by_id(formulario) 
+
+    tour = Tour.get_all() 
+    
+    return render_template('restaurants.html', therests = tour, user = user)
+
+@app.route('/coffee')
+def coffee():
+    if 'usuario_id' not in session:
+        return redirect('/')
+
+    formulario = {
+        "id": session['usuario_id']
+    }
+
+    user = User.get_by_id(formulario) 
+
+    tour = Tour.get_all() 
+    
+    return render_template('coffees.html', thecoffee = tour, user = user)
+
+@app.route('/museum')
+def museum():
+    if 'usuario_id' not in session:
+        return redirect('/')
+
+    formulario = {
+        "id": session['usuario_id']
+    }
+
+    user = User.get_by_id(formulario) 
+
+    tour = Tour.get_all() 
+    
+    return render_template('musetheat.html', themuseum = tour, user = user)
+
+@app.route('/nature')
+def nature():
+    if 'usuario_id' not in session:
+        return redirect('/')
+
+    formulario = {
+        "id": session['usuario_id']
+    }
+
+    user = User.get_by_id(formulario) 
+
+    tour = Tour.get_all() 
+    
+    return render_template('nature.html', thenature = tour, user = user)
+
+@app.route('/others')
+def others():
+    if 'usuario_id' not in session:
+        return redirect('/')
+
+    formulario = {
+        "id": session['usuario_id']
+    }
+
+    user = User.get_by_id(formulario) 
+
+    tour = Tour.get_all() 
+    
+    return render_template('otherpl.html', theothersplaces = tour, user = user)
 
 @app.route('/delete/tour/<int:id>')
 def delete_tour(id):

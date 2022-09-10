@@ -10,80 +10,61 @@
 
 </head>
 <body>
-    <div class="container">
-        <header class="d-flex justify-content-between align-items-center">
-                <nav> <!-- Menú de navegación--> 
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/dashboard" id="headr">Que Chimba Medallo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
 
-                {% if user.id == 2 %}
-                    <a href="/new/place"class="btn btn-outline-secondary" disabled>Add a Place</a>
-                    <a href="/edit/user/{{user.id }}" class="btn btn-outline-secondary" disabled>My Account</a>
-                    <a href="/game" class="btn btn-outline-secondary" disabled>Trivia</a>
-                    <a href="/logout" class="btn btn-outline-secondary" disabled>Log Out</a>
-                {% elif user.id != 2 %}
-                    <a href="/edit/user/{{user.id }}" class="btn btn-outline-secondary" disabled>My Account</a>
-                    <a href="/juegos" class="btn btn-outline-secondary" disabled>Play</a>
-                    <a href="/logout" class="btn btn-outline-secondary" disabled>Log Out</a>
-                {% endif %}
-
-            </nav>
-        </header><br>
-    </div>
-    
-
-    <div class="row">
-        <div class="col-4">
-                
-                <h1 class="list">Where do you want to go?</h1> 
-            
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
-
-                <ul id="myUL">
-                    <li><a href="#">Restaurants</a></li>
-                    <li><a href="/nightclubs">Night Clubs</a></li>
-                    <li><a href="#">Coffee Shop</a></li>
-                    <li><a href="#">Museums / Theaters</a></li>
-                    <li><a href="#">Nature</a></li>
-                    <li><a href="#">Others</a></li>
-                </ul>
-
-            {% for place in tour %}
-                <a href="/show/place/{{place.id}}" class="btn btn-link" id="species" > 
-                    {{place.category}}</a> <br>
-            {%endfor%}
-            
-            
-        </div>
-        <div class="col-8" id="tib">
-                <h1> Hablemos de tiburones </h1><br>
-                <p> Los tiburones pertenecen a la clase chondrichthyes que los identifica
-                    como peces cartilaginosos...<br> 
-                    pero que quiere decir eso?<br>
-                    Pues bien esto quiere decir que su esqueleto interno está compuesto por cartílago 
-                    en lugar de hueso... ¡¿acaso no es esto INCREIBLEEEEE?! 
-                </p>
-                <div class="esq">
-                <img src="{{ url_for('static',filename='img/esqueleto.jpeg')}}" id="esqueleto" />
-                </div>
-                <p>
-                    En el mundo hay alrededor de 509 especies de tiburones... En el caribe colombiano habitan 57spp por su parte el pacífico alberga 36spp... Pero algo muy curioso es que en el pacífico hay menos especies en comparación con el caribe sin embargo de cada especie abundan individuos, esto se debe al efecto de las actividades humanas que se llevan en nuestro caribe
-                </p>
-                <p>
-                    Los tiburones pueden vivir en zonas costeras o zonas oceánicas, la zona costera se encuentra entre el borde de la tierra y el borde de la plataforma continental mientras que la zona oceánica es aquella que se encuentra después de la plataforma continental.
-                    Los tiburones continentales se dividen en dos grandes grupos aquellos que tienen comportamientos pelágicos y aquellos con comportamientos bentónicos...<br>
-                </p>
-                <div class="esq">
-                    <img src="{{ url_for('static',filename='img/emarinos.jpeg')}}" id="emarinos"/><br>
-                </div>
-                    <p>
-                    Pero qué es esto de pelágico y bentónico??? <br>
-                    Se denominan especies con comportamientos o hábitos pelágicos aquellas que viven en aguas medias o cerca de la superficie (pero recuerda cerca de la superficie puede ser 100mt de profundidad e incluso mucho más)
-                    por su parte habitos bentónicos abarba aquellas especies que habitan el fondo marino
-                </p>
-
+            {% if user.id == 2 %}
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/new/place">Add a Place</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/edit/user/{{user.id }}">My Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/game">Trivia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Log Out</a>
+                </li>
+            </ul>
             </div>
+            {% elif user.id != 2 %}
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/edit/user/{{user.id }}">My Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/game">Trivia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Log Out</a>
+                    </li>
+                </ul>
+                </div>
+                {% endif %}
+        </nav>
+    
+    <div id="body2">
+        <div  class="p-5 text-center bg-image">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <div class="text-white">
+                        <h1 class="mb-4" >Que Chimba Medallo Mor</h1>
+                        <h4 class="mb-4">What do you want to do?</h4>
+                            <a class="btn btn-outline-light btn-lg mb-3" href="/restaurants" role="button">Restaurants</a><br>
+                            <a class="btn btn-outline-light btn-lg mb-3" href="/nightclubs" role="button">Night Clubs</a><br>
+                            <a class="btn btn-outline-light btn-lg mb-3" href="/coffee" role="button">Coffee Shop</a><br>
+                            <a class="btn btn-outline-light btn-lg mb-3" href="/museum" role="button">Museums / Theaters</a><br>
+                            <a class="btn btn-outline-light btn-lg mb-3" href="/nature" role="button">Nature</a><br>
+                            <a class="btn btn-outline-light btn-lg" href="/others" role="button">Others</a>
+                    </div>
+                </div>
         </div>
-    
-    
-    <script src="{{url_for('static', filename='./js/js.js')}}"></script>
+    </div>
 </body>
 </html>
