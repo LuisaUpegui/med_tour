@@ -109,9 +109,9 @@ def update_user():
 
 
 
-# @app.route('/juegos')
-# def jugar():
-#     return render_template('index.html')
+@app.route('/game')
+def jugar():
+    return render_template('index.html')
 
 
 @app.route('/logout')

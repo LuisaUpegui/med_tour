@@ -1,44 +1,44 @@
 // inicializamos un array de arrays con la preguntas del juego. 
 var questions = [
 	[
-		"¿Que quiere decir peces cartilaginosos cartilaginoso?",
-		"Esqueleto compuesto por hueso",
-		"Esqueleto comupuesto de cartilago",
-		"Cabeza compuesta por cartilago",
-		"Cabeza compuesta por hueso",
-		1
-	],
-	[
-		"¿Cuantas especies de tiburones hay en el mundo (aproximadamente)?",
-		"509",
-		"10000",
-		"45",
-		"Ninguno de los anteriores",
+		"The best place in town to dance salsa",
+		"El tibiri bar",
+		"La ruana de juana",
+		"Salon amador",
+		"Perro negro",
 		0
 	],
 	[
-		"¿Cuantas especies de tiburones habitan nuestro caribe colombiano?",
-		"36",
-		"40",
-		"13",
-		"57",
+		"A place full of nature, peace and waterfalls ",
+		"Parque Arví",
+		"Guatape",
+		"El chorro de las campanas",
+		"Provenza",
+		2
+	],
+	[
+		"here you can enjoy a deliciuos and traditional colombian meal ",
+		"La Hacienda",
+		"Asados doña rosa",
+		"Mondongo's ",
+		"All are correct",
 		3
 	],
 	[
-		"¿Donde abundan más estos hermoso animales marinos?",
-		"Caribe",
-		"Caribe y pacifico",
-		"Pacifico",
-		"Ninguno de los anteriores",
-		2
+		"If you want to try the biggest chicharron in Medellín you must go to: ",
+		"La gloria de gloria",
+		"BBC",
+		"El rancherito",
+		"El cielo",
+		0
 	],
 	[
-		"¿Que quiere decir habito pelagico",
-		"que viven en el fondo marino",
-		"que nadan",
-		"que habitan las aguas medias o superficiales",
-		"que habitan las aguas profundas",
-		2
+		"xxxxx ",
+		"1",
+		"2 ",
+		"3",
+		"4",
+		3
 	],
 ];
 
@@ -168,7 +168,7 @@ $(function() {
 
 	// Actualiza los puntos en pantalla.
 	function updatePoints() {
-		$('.points span.points').html(points + ' puntos');
+		$('.points span.points').html(points + ' points');
 	}
 
 	// Esta función se ejecuta cuando el jugador escoge una respuesta.
@@ -214,7 +214,7 @@ $(function() {
 		if (timeLeftForQuestion == 0) {
 			$('.times_up').show();
 		}
-		$('p.final_points').html(points + ' puntos');
+		$('p.final_points').html(points + ' points');
 		$('.question.card:visible').hide();
 		$('.finish.card').show();
 	}

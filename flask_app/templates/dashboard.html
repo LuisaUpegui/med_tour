@@ -17,7 +17,7 @@
                 {% if user.id == 2 %}
                     <a href="/new/place"class="btn btn-outline-secondary" disabled>Add a Place</a>
                     <a href="/edit/user/{{user.id }}" class="btn btn-outline-secondary" disabled>My Account</a>
-                    <a href="/juegos" class="btn btn-outline-secondary" disabled>Play</a>
+                    <a href="/game" class="btn btn-outline-secondary" disabled>Trivia</a>
                     <a href="/logout" class="btn btn-outline-secondary" disabled>Log Out</a>
                 {% elif user.id != 2 %}
                     <a href="/edit/user/{{user.id }}" class="btn btn-outline-secondary" disabled>My Account</a>
