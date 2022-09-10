@@ -33,11 +33,11 @@ var questions = [
 		0
 	],
 	[
-		"xxxxx ",
-		"1",
-		"2 ",
-		"3",
-		"4",
+		"One of the best places to drink a colombian coffee ",
+		"Pergamino café",
+		"Starbucks",
+		"Tostao",
+		"All are correct",
 		3
 	],
 ];
