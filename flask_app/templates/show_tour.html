@@ -26,12 +26,14 @@
                 </div>
                 <div class="card-body">
                     <div class="let">
-                        <p>Nombre común: {{tour.place_name}}</p>
 
-                        <p>Descripción: {{tour.place_name}}</p>
-                        <p>Habitos: {{tour.place_name}}</p>
-                        <p>Distribución en colombia: {{tour.place_name}}</p> <br>
-                        <h4>Añadido por: {{tour.first_name}} {{tour.last_name}}</h4>
+
+                        <p>Price range: {{tour.price_range}}</p>
+                        <p>Schedule: {{tour.schedule}}</p> 
+                        <p>Location: {{tour.location}}</p> 
+                        <p>reference place: {{tour.reference_place}}</p> 
+
+
                     </div>
                     {% with messages = get_flashed_messages(category_filter=['places']) %}
                     {% if messages %}
